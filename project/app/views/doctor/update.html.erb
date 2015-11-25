@@ -1,0 +1,5 @@
+<%= form_for @doctor,url: { action: "update_doctor"}, htnl: {class: "doctor"} do|d| %>
+  <%= d.label :id %>
+  <%= d.text_field :id %>
+  <%= d.submit :update_doctor %>
+<% end %>    
