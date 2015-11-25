@@ -1,0 +1,5 @@
+<%= form_tag("/update_user",method: "get") do %>
+  <%= label_tag(:id, "id") %>
+  <%= text_field_tag(:id) %>
+  <%= submit_tag("update_user") %>
+<% end %>   

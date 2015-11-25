@@ -31,6 +31,47 @@ class HomeController < ApplicationController
 	@group = User.select("name").group(:name)
 	@group1 = User.group( :name ).count
 	@having = User.select(:name).group(:name).having("sum(id) > ?", 4)
- 
+	@unscope = User.where('id > 4').limit(3).offset(1).order("name asc").unscope(:limit)
+	@unscope1 = User.where('gender = ?', 'female').order('name asc').unscope(:where)
+	@only = User.where('city = ?', 'noida').order('gender asc').only(:where)
+	@reorder = User.order('name asc').reorder('name')
+	@reverse_order = User.order('name desc').reverse_order
+	@join = User.joins('right outer join articales on users.id = articales.user_id')
+    @innerjoin = User.joins(:articales)
+    @innerjoin1 = User.joins(:articales, :comments)
+    @innerjoin2 = User.joins( articales: :comments)
+    @innerjoin3 = User.joins(:articales).where('gender = ?','female').where(id:[ 1..2])
+    @pluck = User.limit(5).pluck( :id, :name, :gender, :city)
+    @ids = User.ids
+  end
+
+  def form
+
+  end
+
+  def create
+    @user = User.create( :name => params[:name], :city => params[:city], :gender => params[:gender])
+  end
+
+  def delete_user
+
+  end
+
+  def delete
+  	@user = User.where( :name => params[:name], :city => params[:city], :gender => params[:gender])
+  	@user.delete_all
+  end
+
+  def update
+
+  end
+
+  def update_user
+  	@user = User.find_by( :id => params[:id])
+  end
+
+  def update_complete
+  	@user = User.find_by( :id => params[:id])
+  	@user.update(:name => params[:name], :city => params[:city], :gender => params[:gender], :id => params[:id])
   end	
 end

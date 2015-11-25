@@ -5,7 +5,14 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
    root 'home#index'
    get '/show/:name' => 'home#show'
-
+   get '/form' => 'home#form'
+   post '/create' => 'home#create'
+   get '/delete_user' => 'home#delete_user'
+   post '/delete' => 'home#delete'
+   get '/update' => 'home#update'
+   get '/update_user' => 'home#update_user'
+   post 'update_complete' => 'home#update_complete'
+   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

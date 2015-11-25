@@ -1,0 +1,12 @@
+<%= form_tag("/update_complete",method: "post") do %>
+  <%= label_tag(:name, "name") %>
+  <%= text_field_tag(:name, @user.name) %> </br>
+  <%= label_tag(:city, "city") %>
+  <%= text_field_tag(:city,@user.city) %> </br>
+  <%= radio_button_tag(:gender, "male") %>
+  <%= label_tag(:gender_male,"male") %>
+  <%= radio_button_tag(:gender, "female") %>
+  <%= label_tag(:gender_female, "female") %>
+  <%= hidden_field_tag(:id, @user.id) %></br>
+  <%= submit_tag("update_complete") %>
+<% end %>  
