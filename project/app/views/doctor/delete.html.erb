@@ -1,12 +1,4 @@
 <%= form_for @doctor,url: { action: "delete_doctor"}, htnl: {class: "doctor"} do|d| %>
-  <%= d.label :name %>
-  <%= d.text_field :name %>
-  <%= d.label :age %>
-  <%= d.text_field :age %>
-  <%= d.label :gender %>
-  <%= d.radio_button :gender,"male" %>
-  <%= d.label :male %>
-  <%= d.radio_button :gender,"female" %>
-  <%= d.label :female %>
+  <%= d.hidden_field :id %>
   <%= d.submit :delete_doctor %>
 <% end %>    

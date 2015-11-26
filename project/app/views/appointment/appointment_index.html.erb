@@ -1,0 +1,20 @@
+<h3>appointments</h3>
+<div class="container">
+  <div class="row">
+     <div class="col-md-6">
+       <lable for="doctor">Doctor: </label>
+         <select name = "name", id = "doctor_id" >
+           <%= options_from_collection_for_select(Doctor.all, :id, :name) %>
+         </select></br>
+         <lable for="patient">Patient: </label>
+         <select name = "name", id = "patient_id" >
+           <%= options_from_collection_for_select(Patient.all, :id, :name) %>
+         </select> </br>
+         <lable for="patient">Appointment_date&time: </label>
+         <input class="datetimepicker" type="text" >
+         <script type="text/javascript">
+           $('.datetimepicker').datetimepicker();
+         </script>
+       </div>
+     </div>
+   </div>

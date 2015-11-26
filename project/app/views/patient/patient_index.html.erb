@@ -1,5 +1,5 @@
-<%= form_for @doctor,url: { action: "create"}, html: {class: "doctor"} do|d| %>
-  <%= d.submit :createnewdoctor %>
+<%= form_for @patient,url: { action: "new"}, html: {class: "patient"} do|d| %>
+  <%= d.submit :createnewpatient%>
 <% end %> </br>
 </br>
 </br> 
@@ -21,27 +21,20 @@
 </head>
 <body>
 	<table>
-    <caption>doctors</caption>
+    <caption>Patients</caption>
 		<tr>
-			<th>doctor_name</th>
-      
+			<th>patients_name</th>
 		</tr>
-		<%   @doctor1.each do |i| %>
+		<%   @patient1.each do |i| %>
        <tr>
          <td><%= i.name%></td>
-         <th><%= link_to "delete_doctor", delete_event_path(id: i.id) %></th>
-         <th><%= link_to "edit", edit_event_path(id: i.id) %></th>
+         <th><%= link_to "delete_patient",delete_patient_event_path(id: i.id) %></th>
+         <th><%= link_to "edit", edit_patient_event_path(id: i.id) %></th>
+
        </tr>   
      <% end %>  
     </table>  
     
     </body>
-</html> 
-
-
-
-
-
-
-
+</html>   
 

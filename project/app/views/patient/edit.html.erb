@@ -1,0 +1,5 @@
+<%= form_for @patient,url: { action: "update_patient"}, html: {class: "patient"} do|e| %>
+  <%= e.label :id %>
+  <%= e.text_field :id %>
+  <%= e.submit :update_patient %>
+<% end %>  

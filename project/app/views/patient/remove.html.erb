@@ -1,0 +1,5 @@
+
+<%= form_for @patient,url: { action: "delete_patient"}, html: {class: "patient"} do|d| %>
+  <%= d.hidden_field :id %>
+  <%= d.submit :delete_patient %>
+<% end %>

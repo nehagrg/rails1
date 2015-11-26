@@ -4,16 +4,29 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
    root 'home#index'
+   get  '/index' => 'doctor#index'
    get '/create' => 'doctor#create'
    post '/create_doctor' => 'doctor#create_doctor'
    get '/delete' => 'doctor#delete'
+   get '/delete_doctor' => 'doctor#delete_doctor',as: :delete_event
    post '/delete_doctor' => 'doctor#delete_doctor'
-   get  '/index' => 'doctor#index'
+  
    post '/create' => 'doctor#create'
    get  '/update' => 'doctor#update'
-   post '/update_doctor' => 'doctor#update_doctor'
+   get '/update_doctor' => 'doctor#update_doctor', as: :edit_event
    patch '/updated_doctor' => 'doctor#updated_doctor'
-
+   get  '/patient_index' => 'patient#patient_index'
+   get '/new' => 'patient#new'
+   post '/create_patient' => 'patient#create_patient'
+   get '/remove' => 'patient#remove'
+   get '/delete_patient' => 'patient#delete_patient',as: :delete_patient_event
+   post '/delete_patient' => 'patient#delete_patient'
+   get '/edit' => 'patient#edit'
+   get '/update_patient' => 'patient#update_patient',as: :edit_patient_event
+   patch '/updated_patient' => 'patient#updated_patient'
+   post '/new' => 'patient#new'
+   get '/appointment_index' => 'appointment#appointment_index'
+ 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

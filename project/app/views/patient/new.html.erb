@@ -1,13 +1,12 @@
-<%= form_for @doctor,url: { action: "updated_doctor"}, htnl: {class: "doctor"} do|d| %>
+<%= form_for @patient,url: { action: "create_patient"}, htnl: {class: "patient"} do|d| %>
   <%= d.label :name %>
   <%= d.text_field :name %>
   <%= d.label :age %>
   <%= d.text_field :age %>
-  <%= d.hidden_field :id %>
   <%= d.label :gender %>
   <%= d.radio_button :gender,"male" %>
   <%= d.label :male %>
   <%= d.radio_button :gender,"female" %>
   <%= d.label :female %>
-  <%= d.submit :updated_doctor %>
+  <%= d.submit :create_patient %>
 <% end %>    

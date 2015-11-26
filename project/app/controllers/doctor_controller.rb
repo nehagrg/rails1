@@ -11,28 +11,31 @@ class DoctorController < ApplicationController
 
 	def create_doctor
       @doctor = Doctor.create(:name =>params[:doctor][:name], :gender =>params[:doctor][:gender], :age => params[:doctor][:age])
+      redirect_to :action => "index"
     end
 
     def delete
-      @doctor = Doctor.new
-
+      
     end
 
     def delete_doctor
-      @doctor = Doctor.where(:name =>params[:doctor][:name], :gender =>params[:doctor][:gender], :age => params[:doctor][:age])
+      @doctor = Doctor.where(:id =>params[:id])
       @doctor.delete_all
+      redirect_to :action => "index"
     end
 
     def update
+      
     end	
 
     def update_doctor
-      @doctor = Doctor.find_by(:id => params[:doctor][:id])
+      @doctor = Doctor.find_by(:id => params[:id])
     end
 
     def updated_doctor
       @doctor = Doctor.find_by(:id => params[:doctor][:id])
       @doctor.update(:name =>params[:doctor][:name], :gender =>params[:doctor][:gender], :age => params[:doctor][:age])
+      redirect_to :action => "index"
     end
 	
 end
