@@ -9,23 +9,20 @@ class PatientController < ApplicationController
   end
 
   def create_patient
-	@patient = Patient.create(:name =>params[:patient][:name], :gender =>params[:patient][:gender], :age => params[:patient][:age])
+	  @patient = Patient.create(:name =>params[:patient][:name], :gender =>params[:patient][:gender], :age => params[:patient][:age])
     redirect_to :action => "patient_index"
   end
 
   def remove
-    
   end	
 
   def delete_patient
   	@patient = Patient.where(:id =>params[:id])
   	@patient.delete_all
   	redirect_to :action => "patient_index"
-  	
   end	
 
   def edit
-  	
   end
 
   def update_patient

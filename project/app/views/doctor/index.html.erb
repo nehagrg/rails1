@@ -5,37 +5,35 @@
 </br> 
 
 <html>
-<head>
-	<title>alluser</title>
-	<style>
-  table{  
-            border: 0px solid blue;         
-  	       	height:400px;
-  	  	    width:120px;
-  	  	    margin-left: 10px
-  	            }  
-  	         th{
-  	         	text-align: left;
-  	            }
-  	    </style>        
-</head>
-<body>
-	<table>
-    <caption>doctors</caption>
-		<tr>
-			<th>doctor_name</th>
-      
-		</tr>
-		<%   @doctor1.each do |i| %>
-       <tr>
-         <td><%= i.name%></td>
-         <th><%= link_to "delete_doctor", delete_event_path(id: i.id) %></th>
-         <th><%= link_to "edit", edit_event_path(id: i.id) %></th>
-       </tr>   
-     <% end %>  
+  <head>
+	  <title>alluser</title>
+	  <style>
+      table{  
+              border: 0px solid blue;         
+  	       	  height:400px;
+  	  	      width:120px;
+  	  	      margin-left: 10px
+  	       }  
+  	  th{
+  	      text-align: left;
+  	    }
+    </style>        
+  </head>
+  <body>
+	  <table>
+      <caption>doctors</caption>
+		  <tr>
+			  <th>doctor_name</th>
+      </tr>
+		  <% @doctor1.each do |i| %>
+        <tr>
+          <td><%= i.name%></td>
+          <th><%= link_to "delete_doctor", delete_event_path(id: i.id) %></th>
+          <th><%= link_to "edit", edit_event_path(id: i.id) %></th>
+        </tr>   
+      <% end %>  
     </table>  
-    
-    </body>
+  </body>
 </html> 
 
 
