@@ -1,5 +1,5 @@
 <%= form_for @appointment,url: { action: "create_appointment"}, html: {class: "appointment"} do|d| %>
-  <%= d.submit :createnewdoctor %>
+  <%= d.submit :createnewappointment %>
 <% end %> </br>
 </br>
 </br> 
@@ -23,12 +23,15 @@
     <table>
       <caption>appointment</caption>
       <tr>
-        <th>viewallappointments</th>
-        
+         <th>viewallappointments</th>
+         <th>doctor</th>
+         <th>patient</th>
       </tr>
       <% @appointment1.each do |i| %>
         <tr>
           <td><%= i.appointment_date%></td> 
+          <td><%= i.doctor_id%></td> 
+          <td><%= i.patient_id%></td> 
         </tr>   
       <% end %>  
     </table>  
