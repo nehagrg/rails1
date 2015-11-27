@@ -1,0 +1,13 @@
+<%= form_for @person, url: {action: "create_person"} do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.label :email_confirmation %>
+  <%= f.text_field :email_confirmation %>
+  <%= f.radio_button :gender,"male" %>
+  <%= f.label :male %>
+  <%= f.radio_button :gender,"female" %>
+  <%= f.label :female %>
+  <%= f.submit :submit %>
+<% end %>

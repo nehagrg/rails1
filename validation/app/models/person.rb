@@ -1,3 +1,4 @@
 class Person < ActiveRecord::Base
-  validates :name, presence: true
+  validates :email, confirmation: true
+  validates :email_confirmation, presence: true
 end
