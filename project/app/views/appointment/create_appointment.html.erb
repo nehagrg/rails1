@@ -3,22 +3,19 @@
 <div class="container">
   <div class="row">
      <div class="col-md-6">
-      <%= form_for @appointment,url: {action: "created_appointment"} do|f| %>
-       <lable for="doctor">Doctor: </label>
-         <select name = "name", id = "doctor_id" >
-           <%= options_from_collection_for_select(Doctor.all, :id, :name) %>
-         </select></br>
-         <lable for="patient">Patient: </label>
-          <%= f.select(:appointment, :patient_id, [options_from_collection_for_select(Patient.all, :id, :name)]) %>
-         <lable for="patient">Appointment_date&time: </label>
-         <input class="datetimepicker" type="text" name="date_time" >
+       <%= form_for @appointment,url: {action: "created_appointment"} do|f| %>
+         <%= f.label :doctor %>
+         <%= f.collection_select(:doctor_id, Doctor.all, :id, :name) %></br>
+         <%= f.label :patient %>
+         <%= f.collection_select(:patient_id, Patient.all, :id, :name) %></br>
+         <%= f.label :appointment_datetime %>
+         <%= f.text_field :appointment_date, class: "datetimepicker"  %><br/>
          <script type="text/javascript">
            $('.datetimepicker').datetimepicker();
          </script></br>
          <%= f.submit :submit %>
        <% end %>  
-
-       </div>
      </div>
-   </div>
+  </div>
+</div>
    

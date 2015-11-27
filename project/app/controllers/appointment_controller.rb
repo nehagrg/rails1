@@ -1,13 +1,14 @@
 class AppointmentController < ApplicationController
   def appointment_index
-  	@doctors = Doctor.all
-    @appointments     
+    @appointment = Appointment.new
+    @appointment1 = Appointment.all    
 
   end
 
   def appointments
 
-  	@appointments = Appointment.join(:doctor)
+  	@doctor = Doctor.join(:appointment)
+    redirect_to :action => "appointment_index"
 
   end
 
@@ -19,7 +20,7 @@ class AppointmentController < ApplicationController
   end
 
   def created_appointment
-  	@appointment = Appointment.create(:doctor_id =>params[:doctor_id],:patient_id =>params[:patient_id],:appointment_date =>params[:date_time])
+  	@appointment = Appointment.create(:doctor_id =>params[:appointment][:doctor_id],:patient_id =>params[:appointment][:patient_id],:appointment_date =>params[:appointment][:appointment_date])
   	redirect_to :action => "appointment_index"
   end	
 	

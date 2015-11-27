@@ -28,6 +28,8 @@ Rails.application.routes.draw do
    get '/appointment_index' => 'appointment#appointment_index'
    get '/create_appointment' =>'appointment#create_appointment'
    post '/created_appointment' =>'appointment#created_appointment'
+   get '/appointment' => 'appointment#appointment',as: :appointment_event_path
+   post '/appointment' => 'appointment#appointment'
  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

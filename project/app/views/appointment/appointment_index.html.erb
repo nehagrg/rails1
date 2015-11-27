@@ -1,20 +1,35 @@
-<h3>appointments</h3>
-<div class="container">
-  <div class="row">
-     <div class="col-md-6">
-       <lable for="doctor">Doctor: </label>
-         <select name = "name", id = "doctor_id" >
-           <%= options_from_collection_for_select(Doctor.all, :id, :name) %>
-         </select></br>
-         <lable for="patient">Patient: </label>
-         <select name = "name", id = "patient_id" >
-           <%= options_from_collection_for_select(Patient.all, :id, :name) %>
-         </select> </br>
-         <lable for="patient">Appointment_date&time: </label>
-         <input class="datetimepicker" type="text" >
-         <script type="text/javascript">
-           $('.datetimepicker').datetimepicker();
-         </script>
-       </div>
-     </div>
-   </div>
+<%= form_for @appointment,url: { action: "create_appointment"}, html: {class: "appointment"} do|d| %>
+  <%= d.submit :createnewdoctor %>
+<% end %> </br>
+</br>
+</br> 
+
+<html>
+  <head>
+    <title>alluser</title>
+    <style>
+      table{  
+              border: 0px solid blue;         
+              height:400px;
+              width:120px;
+              margin-left: 10px
+           }  
+      th{
+          text-align: left;
+        }
+    </style>        
+  </head>
+  <body>
+    <table>
+      <caption>appointment</caption>
+      <tr>
+        <th>allappointments</th>
+      </tr>
+      <% @appointment1.each do |i| %>
+        <tr>
+          <td><%= i.appointment_date%></td>
+          <th><%=  %></th> 
+        </tr>   
+      <% end %>  
+    </table>  
+  </body>
