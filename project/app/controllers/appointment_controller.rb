@@ -6,17 +6,13 @@ class AppointmentController < ApplicationController
   end
 
   def appointments
-
-  	@doctor = Doctor.join(:appointment)
+    @appointment = Doctor.find(:id => params[:id]).appointments.select("appointment_date")
     redirect_to :action => "appointment_index"
 
   end
 
-
-  
   def create_appointment
   	@appointment = Appointment.new
-  	
   end
 
   def created_appointment

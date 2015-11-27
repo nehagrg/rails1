@@ -11,8 +11,8 @@
       table{  
               border: 0px solid blue;         
               height:400px;
-              width:120px;
-              margin-left: 10px
+              width:520px;
+              margin-left: 50px
            }  
       th{
           text-align: left;
@@ -23,12 +23,12 @@
     <table>
       <caption>appointment</caption>
       <tr>
-        <th>allappointments</th>
+        <th>viewallappointments</th>
+        
       </tr>
       <% @appointment1.each do |i| %>
         <tr>
-          <td><%= i.appointment_date%></td>
-          <th><%=  %></th> 
+          <td><%= i.appointment_date%></td> 
         </tr>   
       <% end %>  
     </table>  
