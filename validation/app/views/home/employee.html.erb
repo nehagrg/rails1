@@ -1,0 +1,17 @@
+
+<%= form_for @employee, url: {action: "create_employee"} do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %> </br>
+  <%= f.label :age    %>
+  <%= f.text_field :age %> </br>
+  <%= f.label :salary %>
+  <%= f.text_field :salary %> </br>
+  <%= f.label :dept %></br>
+  <%= f.label :hr %>
+  <%= f.check_box :dept,:value =>"hr" %>
+  <%= f.label :technical %>
+  <%= f.check_box :dept, :value =>"technical" %>
+  <%= f.label :mgmt %>
+  <%= f.check_box :dept, :value =>"mgmt" %>
+  <%= f.submit :submit %>
+<% end %>  
